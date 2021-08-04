@@ -26,9 +26,8 @@
 
 <body style="height: 100%; margin: 0;">
 
-    <!-- Remove to enable saving and adding markers
     <button id="asd" onclick="SaveAllMarkers()">Save</button>
-    <button onclick="AddMarker()">Add Marker</button>-->
+    <button onclick="AddMarker()">Add Marker</button>
     <div id="ssmap" style='width: 100%; height: 100%; background: #000000;'></div>
     <div id="sideMenu">
         <div id="left-sidebar" class="resizable left-sidebar">
@@ -304,7 +303,7 @@
             AllMarkersData.forEach((item) => {
                 var info = item;
                 var marker = L.marker([info.lat, info.lng], {
-                    draggable: false,
+                    draggable: true,
                     id: info.id,
                     group: info.group,
                     category: info.category,
@@ -322,7 +321,7 @@
             AllLocationsData.forEach((item) => {
                 var info = item;
                 var marker = L.marker([info.lat, info.lng], {
-                    draggable: false,
+                    draggable: true,
                     id: info.id,
                     icon: L.divIcon({ className: 'location-marker', html: '<div class="location-name">' + info.location + '</div>' }),
                     location: info.location
